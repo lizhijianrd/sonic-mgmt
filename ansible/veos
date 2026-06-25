@@ -6,10 +6,12 @@ all:
           children:
             vm_host_1:
             vm_host_2:
+            vm_host_11:
     eos:
       children:
         vms_1:
         vms_2:
+        vms_11:
     servers:
       vars:
         topologies:
@@ -104,6 +106,7 @@ all:
       children:
         server_1:
         server_2:
+        server_11:
 
 vm_host_1:
   hosts:
@@ -403,3 +406,18 @@ server_2:
   children:
     vm_host_2:
     vms_2:
+
+vm_host_11:
+  hosts:
+    bjw-can-serv-11:
+      ansible_host: 10.150.22.232
+
+vms_11:
+  hosts: {}
+
+server_11:
+  vars:
+    host_var_file: host_vars/bjw-can-serv-11.yml
+  children:
+    vm_host_11:
+    vms_11:

@@ -16,6 +16,7 @@ all:
             sonic_msft_sup:
             sonic_msft_lc_100G:
             sonic_cisco_vs:
+            sonic_cisco_8220:
             sonic_vnut:
         fanout:
           hosts:
@@ -41,6 +42,8 @@ all:
             server_1:
               ansible_host: 10.254.0.1
               ansible_hostv6: 2001:db7:1::1/64
+            bjw-can-serv-11:
+              ansible_host: 10.150.22.232
         pdu:
           hosts:
             pdu-1:
@@ -69,6 +72,8 @@ all:
           ansible_host: 10.255.0.180
         ptf_vms5-1:
           ansible_host: 10.255.0.183
+        ptf_bjw3-can-8220-3:
+          ansible_host: 10.150.23.239
 
 sonic_sn2700_40:
   vars:
@@ -289,6 +294,14 @@ sonic_cisco_vs:
       ansible_user: admin
       ansible_ssh_user: admin
       ansible_altpassword: admin
+
+sonic_cisco_8220:
+  vars:
+    hwsku: Cisco-C8220TG-G1S2
+    iface_speed: 400000
+  hosts:
+    bjw3-can-8220-3:
+      ansible_host: 10.150.23.240
 
 sonic_vnut:
   vars:

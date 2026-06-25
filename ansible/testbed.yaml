@@ -301,3 +301,18 @@
   auto_recover: 'True'
   netns_mgmt_ip: 10.255.0.211/16
   comment: dualtor setup example
+
+- conf-name: testbed-bjw3-can-8220-3
+  group-name: bjw3-can-8220-3
+  topo: c0-lo
+  ptf_image_name: docker-ptf
+  ptf: ptf_bjw3-can-8220-3
+  ptf_ip: 10.150.23.239/23
+  ptf_ipv6:
+  server: server_11
+  vm_base:
+  dut:
+    - bjw3-can-8220-3
+  inv_name: lab
+  auto_recover: 'True'
+  comment: Cisco 8220 c0-lo testbed on bjw-can-serv-11
